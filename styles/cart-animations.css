@@ -1,0 +1,40 @@
+/* 
+ * SIMGEAR Cart Animations
+ * Simple, direct animations for the cart functionality
+ */
+
+/* Cart counter bounce animation */
+@keyframes cartBounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+        background-color: #68222A;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cart-bounce {
+    animation: cartBounce 0.5s ease-in-out;
+}
+
+/* Add to cart button animation */
+@keyframes addToCart {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #5a1e25;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.add-to-cart-animation {
+    animation: addToCart 0.5s ease-in-out;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - SIMGEAR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/OrderHistory.css">
+    <link rel="stylesheet" href="/styles/cart-animations.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <script defer src="/scripts/OrderHistory.js"></script>
+
+</head>
+<body>
+  <header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/pages/index.html" style="text-decoration: none;"><h1><span>SIMGEAR</span></h1></a>
+            </div>
+            <div class="nav-icons search-group">
+                <form action="" class="search-form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="nav-icons">
+              <button class="auth-btn" onclick="window.location.href='/pages/login.html'">LogIn</button>
+              <a href="/pages/profile.html"><i class="fas fa-user"></i></a>
+                <div class="icon-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>0</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<hr>
+
+    <section class="OrderHistory">
+        <div class="history-container">
+
+            <div class ="profile-header">
+                <h3><a href="profile.html" class="profile-anchor">Account info</a></h3>
+                <p>></p>
+                <h3>Order History</h3>
+            </div>
+            <hr><br>
+            <!-- <div>
+                <h4 style="text-align: center;">You haven't ordered yet</h4>
+            </div>   -->
+            <table class="history-table">
+                <thead>
+                  <tr>
+                    <th>Product name</th>
+                    <th>Unit price</th>
+                    <th>Delivery status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="product-info" data-label="Product">
+                      <img src="/assets/beanie_logo.jpg" alt="Product" class="product-img">
+                      <span>Beanie with Logo</span>
+                    </td>
+                    <td data-label="Price">
+                      <span class="new-price">$18.00</span>
+                    </td>
+                    <td class="stock-info" data-label="Status">
+                      <span>In Progress</span>
+                      <small>Added on: December 5, 2025</small><br>
+                      <button class="track-btn" onclick="openStatusPopup('Delivering')">Track Order</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="product-info" data-label="Product">
+                      <img src="/assets/shirt.webp" alt="Product" class="product-img">
+                      <span>Classy shirt</span>
+                    </td>
+                    <td data-label="Price">
+                      <span class="new-price">$16.00</span>
+                    </td>
+                    <td class="stock-info" data-label="Status">
+                      <span>Delivered</span>
+                      <small>Added on: December 6, 2025</small><br>
+                      <button class="add-to-cart">Order Again</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="product-info" data-label="Product">
+                      <img src="/assets/beanie.jpg" alt="Product" class="product-img">
+                      <span>Beanie</span>
+                    </td>
+                    <td data-label="Price">
+                      <span class="new-price">$18.00</span>
+                    </td>
+                    <td class="stock-info" data-label="Status">
+                      <span>Delivered</span>
+                      <small>Added on: December 6, 2025</small><br>
+                      <button class="add-to-cart">Order Again</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div id="statusPopup" class="popup">
+                <h3>Shipment Tracking</h3>
+                <div class="progress-tracker">
+                  <div class="step completed"></div>
+                  <div class="step completed"></div>
+                  <div class="step active"></div>
+                  <div class="step"></div>
+                </div>
+                <div class="progress-labels">
+                  <span class="active-text">Shipping soon</span>
+                  <span class="active-text">Shipped</span>
+                  <span class="step-activ-text">Out for delivery</span>
+                  <span class="step-text">Delivered</span>
+                </div>
+                <p class="expected-delivery">Expected delivery: <span>Monday, June 8, 2025, by 8:00 PM</span></p>
+                <div class="tracking-details">
+                  <h3>Tracking Details:</h3>
+                  <ul>
+                    <li><strong>June 8, 4:07 PM:</strong> Out for delivery - Seattle, WA</li>
+                    <li><strong>June 8, 3:24 PM:</strong> Out for delivery - Seattle, WA</li>
+                    <li><strong>June 8, 2:35 PM:</strong> Arrived at carrier facility - Seattle, WA</li>
+                    <li><strong>June 8, 2:00 PM:</strong> Left seller facility - Sumner, WA</li>
+                  </ul>
+                </div class="close-btn-container">
+                <button class="close-btn" onclick="closeStatusPopup()">Close</button>
+                </div>
+
+              <div id="overlay" class="overlay"></div>
+            <!-- <div class="order-button">
+                 <a href="" class="button">Start Ordering Here</a>
+            </div>         -->
+        </div>
+
+          <div class="cartTab" id="cartTab">
+            <h1>Shopping Cart</h1>
+
+                <div class="listCart">
+                    <div class="item">
+                        <div class="image">
+                            <img src="/assets/beanie.jpg" alt="image">
+                        </div>
+                              <div class="name">NAME</div>
+                              <div class="totalPrice">$$$$</div>
+                        <div class="quantity">
+                            <span class="minus"></span>
+                            <span class="quantity-text"></span>
+                            <span class="plus"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="btnCart">
+                  <button class="close" id="closeBtn">Close</button>
+                  <button class="checkout" onclick="window.location.href='Checkout.html'">Checkout</button>
+                </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+          <div class="footer-about">
+              <h2>SIMGEAR</h2>
+              <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+          </div>
+          <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                  <li><a href="/pages/allProducts.html">Shop All</a></li>
+                  <li><a href="/pages/machines.html">Machines</a></li>
+                  <li><a href="/pages/apparel.html">Apparel</a></li>
+                  <li><a href="/pages/contact.html">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer-support">
+              <h4>Support</h4>
+              <ul>
+                  <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                  <li><a href="/pages/faqs.html">FAQs</a></li>
+                  <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                  <li><a href="/pages/terms.html">Terms of Service</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>© 2025 SIMGEAR. All rights reserved.</p>
+      </div>
+  </footer>
+
+</body>
+</html>

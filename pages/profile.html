@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Info - SIMGEAR</title>
+    <script src="https://kit.fontawesome.com/3a0bd53f72.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/profile.css">
+    <link rel="stylesheet" href="/styles/cart-animations.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <script defer src="/scripts/profile.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/index.html" style="text-decoration: none;"><h1><span>SIMGEAR</span></h1></a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="nav-icons">
+                    <button class="auth-btn" onclick="window.location.href='/pages/login.html'">LogIn</button>
+                    <a href="/pages/profile.html"><i class="fas fa-user"></i></a>
+                    <div class="icon-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <hr>
+
+    <section class="profile">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h3>Account Info</h3>
+            </div>
+            <hr><br>
+            <div class="details">
+                <div class="pfp-upload">
+                    <label for="pfpInput">
+                        <img src="/assets/apparel3.jpg" alt="user" class="user-img" id="profileImage">
+                    </label>
+                    <input type="file" id="pfpInput" accept="image/*" style="display: none;">
+                </div>
+                <br>
+                <div class="user-info">
+                    <form class="profile-form">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="yassinhassan416@gmail.com" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" value="Yassin">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" value="Hassan">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <input type="radio" id="male" name="gender" value="male" checked>
+                                <label for="male" class="radio-label">Male</label>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female" class="radio-label">Female</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="Account-info">
+                <div class="profile-grid">
+                    <button class="profile-card" id="order-history" onclick="window.location.href='/pages/OrderHistory.html'">Order History</button>
+                    <button class="profile-card" id="wishlist" onclick="window.location.href='/pages/Wishlist.html'">Wishlist</button>
+                </div>
+
+                <div class="logout-container">
+                    <button type="button" class="logout" onclick="Open()">Logout</button>
+                    <div class="popup" id="popup">
+                        <h4>Are you sure you want to log out?</h4>
+                        <div class="popup-buttons">
+                            <a href="/pages/index.html" class="confirm-btn">Yes, Log Out</a>
+                            <button class="cancel-btn" onclick="Close()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="overlay" class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="cartTab" id="cartTab">
+            <h1>Shopping Cart</h1>
+            <div class="listCart"></div>
+            <div class="btnCart">
+                <button class="close" id="closeBtn">Close</button>
+                <button class="checkout" onclick="window.location.href='/Pages/Checkout.html'">Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h2>SIMGEAR</h2>
+                <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/allProducts.html">Shop All</a></li>
+                    <li><a href="/pages/machines.html">Machines</a></li>
+                    <li><a href="/pages/apparel.html">Apparel</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                    <li><a href="/pages/faqs.html">FAQs</a></li>
+                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SIMGEAR. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

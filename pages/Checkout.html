@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - SIMGEAR</title>
+    <link rel="stylesheet" href="/styles/Checkout.css">
+    <script src="/scripts/Checkout.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="Layout">
+                <div class="cartdetails">
+                    <h1>Product(s) in cart</h1>
+                    <div class="list">
+                        <!-- Cart items will be dynamically populated by JavaScript -->
+                    </div>
+                    <a href="/pages/allProducts.html">Keeping Shopping</a>
+                </div>
+                <div class="right">
+                    <h1>CHECKOUT</h1>
+                    <div class="checkout-steps">
+                        <!-- Personal Info Step -->
+                        <div class="step active" id="step1">
+                            <div class="form">
+                                <div class="group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" id="firstname" name="firstname" required>
+                                </div>
+                                <div class="group">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" id="lastname" name="lastname" required>
+                                </div>
+                                <div class="group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="group">
+                                    <label for="Phone">Phone Number</label>
+                                    <input type="tel" id="Phone" name="Phone" required>
+                                </div>
+                            </div>
+                            <button class="buttonNext">Continue to Shipping</button>
+                        </div>
+                        
+                        <!-- Shipping Step -->
+                        <div class="step" id="step2">
+                            <div class="form">
+                                <div class="group">
+                                    <label for="Address">Address</label>
+                                    <input type="text" id="Address" name="Address" required>
+                                </div>
+                                <div class="group">
+                                    <label for="Street-number">Street Number</label>
+                                    <input type="number" id="Street-number" name="Street-number" required>
+                                </div>
+                                <div class="group">
+                                    <label for="Building-number">Building Number</label>
+                                    <input type="number" id="Building-number" name="Building-number" required>
+                                </div>
+                                <div class="group">
+                                    <label for="Apt-number">Apartment Number</label>
+                                    <input type="number" id="Apt-number" name="Apt-number" required>
+                                </div>
+                                <div class="group">
+                                    <label for="Country">Country</label>
+                                    <select name="Country" id="Country" required> 
+                                        <option value="Egypt">Egypt</option>
+                                        <option value="Palestine">Palestine</option>
+                                        <option value="Saudi Arabia">Saudi Arabia</option>
+                                    </select>
+                                </div>
+                                <div class="group">
+                                    <label for="City">City</label>
+                                    <select name="City" id="City" required>
+                                        <option value="Cairo">Cairo</option>
+                                        <option value="Alexandria">Alexandria</option>
+                                        <option value="Port Said">Port Said</option>
+                                    </select>
+                                </div>
+                                <div class="group">
+                                    <label for="zip">ZIP Code</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+                            </div>
+
+                            <!-- Totals -->
+                            <div class="return">
+                                <div class="row">
+                                    <p>Total Quantity</p>
+                                    <div class="totalQuantity">0</div>
+                                </div>
+                                <div class="row">
+                                    <p>Total Price</p>
+                                    <div class="totalPrice">$0.00</div>
+                                </div>
+                            </div>
+
+                            <div class="step-buttons">
+                                <button class="buttonBack">Back</button>
+                                <button class="buttonNext">Continue to Payment</button>
+                            </div>
+                        </div>
+                        <!-- Payment Step -->
+                        <div class="step" id="step3">
+                            <div class="payment-form">
+                                <div class="group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" name="cardName" required>
+                                </div>
+                                <div class="group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                                </div>
+                                <div class="card-details">
+                                    <div class="group">
+                                        <label for="expDate">Expiration Date</label>
+                                        <input type="text" id="expiryDate" name="expDate" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-buttons">
+                                <button class="buttonBack">Back</button>
+                                <button class="buttonConfirm">
+                                    <p>Confirm Payment</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </main>
+</body>
+</html>

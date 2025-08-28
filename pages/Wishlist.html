@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - SIMGEAR</title>
+    <script src="https://kit.fontawesome.com/3a0bd53f72.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/Wishlist.css">
+    <link rel="stylesheet" href="/styles/cart-animations.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <script defer src="/scripts/wishlist.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/index.html" style="text-decoration: none;"><h1><span>SIMGEAR</span></h1></a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="nav-icons">
+                    <button class="auth-btn" onclick="window.location.href='/pages/login.html'">LogIn</button>
+                    <a href="/pages/profile.html"><i class="fas fa-user"></i></a>
+                    <div class="icon-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <hr>
+
+    <section class="wishlist">
+        <div class="container">
+            <h3>Wishlist</h3>
+            <div id="empty">Your Wishlist Is Empty</div>
+            <table class="wishlist-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="cartTab" id="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart"></div>
+        <div class="btnCart">
+            <button class="close" id="closeBtn">Close</button>
+            <button class="checkout" onclick="window.location.href='/pages/Checkout.html'">Checkout</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h2>SIMGEAR</h2>
+                <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/allProducts.html">Shop All</a></li>
+                    <li><a href="/pages/machines.html">Machines</a></li>
+                    <li><a href="/pages/apparel.html">Apparel</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                    <li><a href="/pages/faqs.html">FAQs</a></li>
+                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SIMGEAR. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

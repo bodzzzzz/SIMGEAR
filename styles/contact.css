@@ -1,0 +1,206 @@
+/*
+ * SIMGEAR Contact Page Styles
+ * Specific styles for the contact page
+ */
+
+/* Contact grid layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Contact form styles */
+.contact-form {
+    background-color: #f8f4f4;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #68222A;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #5a1e25;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Form validation styles */
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Contact information styles */
+.contact-info-card {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f8f4f4;
+    border-radius: 8px;
+}
+
+.contact-info-card h3 {
+    color: #68222A;
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info-card h3 i {
+    margin-right: 10px;
+    width: 24px;
+    text-align: center;
+}
+
+.contact-info-card p {
+    margin-left: 34px;
+    line-height: 1.6;
+}
+
+/* Map container styles */
+.map-container {
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Success message styles */
+.success-message {
+    display: none;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 992px) {
+    .contact-grid {
+        gap: 30px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .map-container {
+        height: 220px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contact-info {
+        margin-top: 0;
+        order: -1;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .contact-info-card {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-grid {
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px;
+    }
+
+    .form-group textarea {
+        height: 120px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contact-info-card h3 {
+        font-size: 16px;
+    }
+
+    .contact-info-card p {
+        font-size: 14px;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+}

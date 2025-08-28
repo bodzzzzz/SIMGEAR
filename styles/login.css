@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, white, #afbdcf);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.form-box h1 {
+    font-size: 36px;
+    margin: -6px 0;
+
+}
+
+.input-box {
+    position: relative;
+    margin: 15px 0;
+    width: 100%;
+
+}
+
+.input-box input {
+    margin: 5px 0;
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    background: #eee;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-box ::placeholder {
+    color: #888;
+    font-weight: 400;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    font-size: 20px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.forgot-password {
+    margin: -10px 0 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.forgot-password a {
+    font-size: 14.5px;
+    color: #68222A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #871a26;
+    text-decoration: underline;
+}
+
+.forgot-password h3 {
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    max-width: 300px;
+    height: 48px;
+    background: #68222A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 13px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #68222A;
+}
+
+.container p {
+    margin: 15px 0;
+    font-size: 14.5px;
+
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #68222A;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #68222A;
+    text-decoration: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #68222A;
+    border-color: #68222A;
+}
+
+.social-icons i {
+    margin: 0 6px;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Mobile navigation for sign-in/sign-up - hidden by default */
+.mobile-nav {
+    display: none;
+}
+#login, #register {
+    width: auto;
+    min-width: 120px;
+    max-width: 75%;
+    color: #fff;
+    background-color: transparent;
+    border: #fff solid 1px;
+    border-color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 10px 0;
+}
+#login:hover, #register:hover {
+    background-color: #fff;
+    color: #68222A;
+    border-color: #68222A;
+    transition: all 0.3s ease-in-out;
+}
+
+.container form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+    width: 100%;
+}
+
+.container form h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+/* Toggle */
+.toggle {
+    background: linear-gradient(to right, #68222A, #871a26);
+    color: #ffffff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+/* Responsive styles for login/register page */
+@media only screen and (max-width: 992px) {
+    .container {
+        width: 700px;
+        min-height: 450px;
+    }
+
+    .form-box h1 {
+        font-size: 32px;
+    }
+
+    .container form {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        max-width: 500px;
+        min-height: auto;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .form-box h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .toggle-container {
+        display: none;
+    }
+
+    .sign-in, .sign-up {
+        width: 100%;
+        left: 0;
+        position: relative;
+        transform: none;
+        padding: 30px 0;
+    }
+
+    .sign-up {
+        display: none;
+    }
+
+    .container.active .sign-in {
+        display: none;
+    }
+
+    .container.active .sign-up {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .container form {
+        padding: 0 20px;
+    }
+
+    .input-box {
+        margin-bottom: 15px;
+    }
+
+    .input-box input {
+        padding: 10px 40px 10px 15px;
+        font-size: 14px;
+    }
+
+    .btn {
+        height: 42px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    /* Show mobile nav on tablet and mobile */
+    .mobile-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .mobile-nav p {
+        font-size: 14px;
+    }
+
+    .mobile-nav button {
+        background: none;
+        border: none;
+        color: #68222A;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .mobile-nav button:hover {
+        text-decoration: underline;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .form-box h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .input-box {
+        margin: 10px 0;
+    }
+
+    .input-box i {
+        font-size: 16px;
+    }
+
+    .input-box input {
+        padding: 10px 35px 10px 12px;
+        font-size: 13px;
+    }
+
+    .forgot-password {
+        margin: 5px 0 15px;
+    }
+
+    .forgot-password a {
+        font-size: 13px;
+    }
+
+    .forgot-password h3 {
+        font-size: 13px;
+    }
+
+    .btn {
+        height: 38px;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        margin: 0 5px;
+    }
+
+    .mobile-nav {
+        margin-top: 15px;
+    }
+
+    .mobile-nav p {
+        font-size: 13px;
+    }
+
+    .mobile-nav button {
+        font-size: 13px;
+        padding: 3px 8px;
+    }
+}

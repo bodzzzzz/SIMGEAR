@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    background-color: #1f1d1d;
+    color: white;
+}
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    position: relative;
+}
+
+.Layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-family: Poppins, sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+.Layout .right {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 30px;
+    color: #68222A;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease, border-radius 0.4s ease, z-index 0.1s;
+}   
+
+.Layout .right.active {
+    transform: translateX(-5%);
+    z-index: 2;
+}
+
+.Layout .cartdetails.active {
+    transform: translateX(5%);
+    z-index: 2;
+}
+
+.cartdetails {
+    background-color: #68222A;
+    border-radius: 30px;
+    padding: 40px;
+    color: #000;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease, border-radius 0.4s ease, z-index 0.1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartdetails h1 {
+    border-top: 1px solid #262224;
+    padding: 20px 0;
+    font-size: 24px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.cartdetails .list {
+    margin-top: 20px;
+}
+
+.cartdetails .item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #262224;
+    border-radius: 15px;
+    transition: transform 0.3s, opacity 0.3s ease;
+}
+
+.cartdetails .item:hover {
+    transform: translateY(-3px);
+}
+
+.cartdetails .list .item img {
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.cartdetails .details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.cartdetails .details p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cartdetails .details p:first-child {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.remove-item {
+    cursor: pointer;
+    color: #262224;
+    font-size: 18px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.remove-item:hover {
+    color: #68222A;
+}
+
+/* Fade out animation */
+.item.removing {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+/* Pop-up modal */
+.confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #ffffff;
+    padding: 20px;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    width: 90%;
+    max-width: 400px;
+}
+
+.confirmation-modal.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.confirmation-modal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+.modal-buttons button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Poppins, sans-serif;
+}
+
+.modal-buttons .confirm-yes {
+    background: gray;
+    color: white;
+}
+
+.modal-buttons .confirm-no {
+    background: #68222A;
+    color: white;
+}
+.modal-buttons .confirm-yes:hover,
+.modal-buttons .confirm-no:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.3s;
+}
+
+/* Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.cartdetails a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    background-color: #262224;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.cartdetails a:hover {
+    background-color: #d9d9d9;
+    color: #1f1d1d;
+}
+
+.Layout .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid #262224;
+    padding-bottom: 20px;
+}
+
+.Layout .form .group:nth-child(-n+3) {
+    grid-column: 1 / -1;
+}
+
+.Layout .form input,
+.Layout .form select {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: none;
+    margin-top: 8px;
+    background-color: #E8F0FE;
+    color: #000;
+    font-family: Poppins, sans-serif;
+}
+
+.group input.error,
+.group select.error {
+    border: 1px solid #e74c3c;
+}
+
+.checkout-steps {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.step.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.return {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #262224;
+}
+
+#step2 .return {
+    display: block;
+}
+
+.Layout .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.Layout .row div:nth-child(2) {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.step-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 20px;
+}
+
+.buttonNext {
+    width: 100%;
+}
+
+.buttonNext,
+.buttonBack,
+.buttonConfirm {
+    flex: 1;
+    height: 45px;
+    border-radius: 20px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+    pointer-events: auto !important;
+}
+
+.buttonNext,
+.buttonConfirm {
+    background-color: #68222A;
+    color: white;
+    border: none;
+}
+
+.buttonBack {
+    background-color: #262224;
+    border: 1px solid ;
+    color: white;
+    
+}
+
+.buttonNext:hover,
+.buttonConfirm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #7a2831;
+}
+
+.buttonBack:hover {
+    background-color: #d9d9d9;
+    color: #1f1d1d;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    border-bottom: 1px solid #262224;
+    padding-bottom: 20px;
+}
+
+.card-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 8px;
+    background-color: #E8F0FE;
+    color: #000;
+    font-family: Poppins, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .Layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .cartdetails,
+    .Layout .right {
+        padding: 25px;
+        min-height: auto;
+        border-radius: 0;
+    }
+    
+    .Layout .form {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-buttons {
+        flex-direction: column;
+    }
+    
+    .buttonNext,
+    .buttonBack,
+    .buttonConfirm {
+        width: 100%;
+    }
+    
+    .Layout .right.active,
+    .Layout .cartdetails.active {
+        transform: none;
+    }
+}

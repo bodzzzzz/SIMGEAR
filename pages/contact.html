@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SIMGEAR</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/support-pages.css">
+    <link rel="stylesheet" href="/styles/animations.css">
+    <link rel="stylesheet" href="/styles/contact.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/index.html" style="text-decoration: none; cursor: pointer;">
+                        <h1><span>SIMGEAR</span></h1>
+                    </a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="nav-icons">
+                    <button class="auth-btn" onclick="window.location.href='/pages/login.html'">LogIn</button>
+                    <a href="/pages/profile.html"><i class="fas fa-user"></i></a>
+                    <div class="icon-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span>
+                    </div>
+                </div>
+            </nav>
+            <div class="links">
+                <ul class="nav-links">
+                    <li><a href="/pages/allProducts.html">SHOP ALL</a></li>
+                    <li><a href="/pages/gear.html">FITNESS GEAR</a></li>
+                    <li><a href="/pages/accessories.html">GYM ACCESSORIES </a></li>
+                    <li><a href="/pages/machines.html">MACHINES</a></li>
+                    <li><a href="/pages/apparel.html">APPAREL</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+        <h1 class="page-title">Contact Us</h1>
+
+        <div class="section">
+            <p>We're here to help with any questions, concerns, or feedback you may have about our products or services. Please use the form below to get in touch with our team, or reach out directly using our contact information.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-form-container">
+                <h2 class="section-title">Send Us a Message</h2>
+
+                <div class="success-message" id="success-message">
+                    <p>Thank you for your message! We'll get back to you as soon as possible.</p>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="order">Order Inquiry</option>
+                            <option value="product">Product Information</option>
+                            <option value="return">Return/Exchange</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h2 class="section-title">Contact Information</h2>
+
+                <div class="contact-info-card">
+                    <h3><i class="fas fa-phone"></i> Phone</h3>
+                    <p>Customer Service: (555) 123-4567</p>
+                    <p>Order Support: (555) 123-4568</p>
+                    <p>Hours: Monday-Friday, 9am-5pm EST</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>General Inquiries: info@simgear.com</p>
+                    <p>Customer Support: support@simgear.com</p>
+                    <p>Order Status: orders@simgear.com</p>
+                </div>
+
+                <div class="contact-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                    <p>SIMGEAR Headquarters<br>
+                    123 Fitness Way<br>
+                    Workout City, WO 12345<br>
+                    United States</p>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s123%20Street%2C%20New%20York%2C%20NY%2010001%2C%20USA!5e0!3m2!1sen!2sus!4v1652890234221!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cartTab" id="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <div class="item">
+                <div class="image"></div>
+                <div class="name">Your cart is empty</div>
+                <div class="totalPrice"></div>
+                <div class="quantity">
+                    <span class="minus">-</span>
+                    <span>0</span>
+                    <span class="plus">+</span>
+                </div>
+            </div>
+        </div>
+        <div class="btnCart">
+            <button class="close" id="closeBtn">Close</button>
+            <button class="checkout" onclick="window.location.href='Checkout.html'">Checkout</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h2>SIMGEAR</h2>
+                <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/allProducts.html">Shop All</a></li>
+                    <li><a href="/pages/machines.html">Machines</a></li>
+                    <li><a href="/pages/apparel.html">Apparel</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                    <li><a href="/pages/faqs.html">FAQs</a></li>
+                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 SIMGEAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initializeCart } from '/scripts/script.js';
+        import { initContactForm } from '/scripts/contact-form.js';
+        import '/scripts/animations.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCart();
+            initContactForm();
+        });
+    </script>
+</body>
+
+</html>

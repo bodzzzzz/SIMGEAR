@@ -1,0 +1,279 @@
+/*
+   Responsive CSS for SIMGEAR website
+   This file contains shared responsive styles for all pages
+*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* General styles */
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        max-width: 100%;
+    }
+
+    /* Header styles */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .logo span {
+        font-size: 28px;
+    }
+
+    .nav-icons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search-group {
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .search-form {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .search-form input {
+        width: 100%;
+    }
+
+    /* Navigation links */
+    .links {
+        margin-top: 20px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 15px;
+        padding-bottom: 5px;
+        min-width: 600px;
+    }
+
+    .nav-links li {
+        flex-shrink: 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* Footer styles */
+    .footer-grid {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-support,
+    .footer-social {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links ul,
+    .footer-support ul {
+        text-align: center;
+    }
+
+    .footer-about p {
+        margin: 0 auto;
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+
+    /* Cart tab */
+    .cartTab {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    /* General styles */
+    .container {
+        width: 100%;
+        padding: 0 20px;
+        max-width: 100%;
+    }
+
+    /* Header styles */
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search-group {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-form {
+        width: 100%;
+        gap: 30px;
+    }
+
+    /* Navigation links */
+    .links {
+        margin-top: 25px;
+        overflow-x: auto;
+    }
+
+    .nav-links {
+        gap: 20px;
+        padding-bottom: 5px;
+        min-width: 600px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    /* Footer styles */
+    .footer-grid {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-about {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-about p {
+        margin: 0 auto;
+    }
+
+    .footer-links,
+    .footer-support,
+    .footer-social {
+        width: 45%;
+    }
+
+    /* Cart tab */
+    .cartTab {
+        width: 350px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .container {
+        width: 100%;
+        max-width: 95%;
+    }
+
+    /* Header styles */
+    .search-group {
+        width: 250px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+    /* Footer styles */
+    .footer-grid {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .footer-about {
+        width: 30%;
+    }
+
+    .footer-links,
+    .footer-support,
+    .footer-social {
+        width: 20%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px to 1200px) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        max-width: 95%;
+    }
+}
+
+/* Product grid responsiveness (shared across product pages) */
+@media only screen and (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Form responsiveness (shared across pages with forms) */
+@media only screen and (max-width: 600px) {
+    form {
+        width: 100%;
+    }
+
+    input, select, textarea {
+        width: 100%;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Button responsiveness */
+@media only screen and (max-width: 600px) {
+    button, .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

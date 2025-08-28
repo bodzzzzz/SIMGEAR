@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SIMGEAR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form action="" id="registration-form">
+                    <h1>Registration</h1>
+                    <div class="input-box">
+                        <input type="text" id="reg-username" name="username" placeholder="username" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="reg-email" name="email" placeholder="email" required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="reg-password" name="password" placeholder="password" required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <input type="submit" class="btn" value="Register" name="Register">
+                    <p style="margin: 15px 0;
+        font-size: 14.5px;
+        color: #333;
+        text-align: center;">or register with social platforms</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="mobile-nav">
+                        <p>Already have an account? <button type="button" id="mobile-login">Login</button></p>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="form-container sign-in">
+                <form action="" id="login-form">
+                    <h1>Login</h1>
+                    <div class="input-box">
+                        <input type="text" id="login-username" name="username" placeholder="username" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="login-password" name="password" placeholder="password" required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="/pages/ForgotPassword.html">
+                            <h3>Forgot Password?</h3>
+                        </a>
+                    </div>
+                    <input type="submit" class="btn" value="Login" name="Login">
+
+                     <p style="margin: 15px 0;
+        font-size: 14.5px;
+        color: #333;
+        text-align: center;">or login with social platforms</p>
+
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="mobile-nav">
+                        <p>Don't have an account? <button type="button" id="mobile-register">Register</button></p>
+                    </div>
+                </form>
+            </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                             <div class="toggle-panel toggle-left">
+                    <h1>Welcome back!</h1>
+                    <p>Already have an account?</p>
+                    <button class="btn" id="login" >Login</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Welcome!</h1>
+                    <p>don't have an account?</p>
+                    <button class="btn" id="register">Register</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/login.js"></script>
+</body>
+
+</html>

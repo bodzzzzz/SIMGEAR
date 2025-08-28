@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/styles/OrderManagement.css">
+    <link rel="stylesheet" href="/styles/admin-responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css "
+    integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="/scripts/OrderManagement.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/AdminHomepage.html" style="text-decoration: none; cursor: pointer;">
+                        <h1><span>SIMGEAR</span></h1>
+                    </a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="logout-container">
+
+                    <button type="button" class="logout"  onclick="Open()">logout</button>
+                    <div class = 'popup' id="popup" >
+                        <h4>Are you sure you want to log out!</h4><br>
+                        <div class="popup-buttons">
+                            <button class="confirm-btn" onclick="window.location.href='login.html'">Confirm</button>
+                            <button class="cancel-btn" onclick="Close()">Cancel</button>
+                        </div>
+                    </div>
+                    <div id="overlay" class="overlay"></div>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+    <hr>
+
+    <section >
+        <div class="container">
+            <section class="order-section">
+                <div class="container">
+                    <div class ="profile-header">
+                        <h3><a href="AdminHomepage.html" class="profile-anchor" style="text-decoration: none; color: black;">Home</a></h3>
+                        <p>></p>
+                        <h3>Order Management</h3>
+                    </div>
+                    <hr><br>
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Order ID</th>
+                                <th>User ID</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/assets/headphones_.jpg" alt="Item 1" class="order-image"></td>
+                                <td>#1001</td>
+                                <td>#U001</td>
+                                <td>2025-04-30</td>
+                                <td>
+                                    <button class="remove-button" >Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/assets/bar3.jpg" alt="Item 2" class="order-image"></td>
+                                <td>#1002</td>
+                                <td>#U002</td>
+                                <td>2025-04-29</td>
+                                <td>
+                                    <button class="remove-button" >Remove</button>
+                                </td>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class='popup' id="removePopup">
+                        <h4>Are you sure you want to remove this order?</h4>
+                        <div class="popup-buttons">
+                            <button class="confirm-btn" id="confirmRemove">Confirm</button>
+                            <button class="cancel-btn" onclick="CloseRemove()">Cancel</button>
+                        </div>
+                    </div>
+                    <div id="overlay" class="overlay"></div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h2>SIMGEAR</h2>
+                <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Machines</a></li>
+                    <li><a href="#">Apparel</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 SIMGEAR. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

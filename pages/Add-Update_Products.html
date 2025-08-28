@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3a0bd53f72.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/Add-Update_Products.css">
+    <link rel="stylesheet" href="/styles/admin-responsive.css">
+    <script src="/scripts/Add-Update_Products.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/AdminHomepage.html" style="text-decoration: none; cursor: pointer;">
+                        <h1><span>SIMGEAR</span></h1>
+                    </a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form" style="visibility: hidden;">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="logout-container">
+
+                    <button type="button" class="logout"  onclick="Open()">logout</button>
+                    <div class = 'popup' id="popup" >
+                        <h4>Are you sure you want to log out?</h4>
+                        <div class="popup-buttons">
+                            <button class="confirm-btn" onclick="window.location.href='login.html'">Confirm</button>
+                            <button class="cancel-btn" onclick="Close()">Cancel</button>
+                        </div>
+                    </div>
+                    <div id="overlay" class="overlay"></div>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+    <hr>
+    <div class="container">
+        <div class ="profile-header">
+            <h3><a href="AdminHomepage.html" class="profile-anchor" style="text-decoration: none; color: black;">Home</a></h3>
+            <p>></p>
+            <h3>Add Products</h3>
+        </div>
+        <hr><br>
+        <div class="admin-container">
+
+
+            <section class="product-management">
+                <h2>Add Product</h2>
+                <form id="add-product-form">
+                    <input type="text" name="name" placeholder="Product Name" required>
+                    <input type="number" name="price" placeholder="Price" step="0.01" required>
+                    <input type="number" name="stock" placeholder="Stock Left" required>
+                    <input type="text" name="category" placeholder="Category" required>
+                    <input type="file" name="image" accept="image/*">
+                    <button type="submit">Add Product</button>
+                </form>
+            </section>
+
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h2>SIMGEAR</h2>
+                <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/allProducts.html">Shop All</a></li>
+                    <li><a href="/pages/machines.html">Machines</a></li>
+                    <li><a href="/pages/apparel.html">Apparel</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                    <li><a href="/pages/faqs.html">FAQs</a></li>
+                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SIMGEAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

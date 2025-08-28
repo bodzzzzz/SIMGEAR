@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping & Returns - SIMGEAR</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/support-pages.css">
+    <link rel="stylesheet" href="/styles/animations.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/index.html" style="text-decoration: none; cursor: pointer;">
+                        <h1><span>SIMGEAR</span></h1>
+                    </a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="nav-icons">
+                    <button class="auth-btn" onclick="window.location.href='/pages/login.html'">LogIn</button>
+                    <a href="/pages/profile.html"><i class="fas fa-user"></i></a>
+                    <div class="icon-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span>
+                    </div>
+                </div>
+            </nav>
+            <div class="links">
+                <ul class="nav-links">
+                    <li><a href="/pages/allProducts.html">SHOP ALL</a></li>
+                    <li><a href="/pages/gear.html">FITNESS GEAR</a></li>
+                    <li><a href="/pages/accessories.html">GYM ACCESSORIES </a></li>
+                    <li><a href="/pages/machines.html">MACHINES</a></li>
+                    <li><a href="/pages/apparel.html">APPAREL</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+        <h1 class="page-title">Shipping & Returns</h1>
+
+        <div class="section">
+            <h2 class="section-title">Shipping Policy</h2>
+            <p>At SIMGEAR, we strive to provide fast, reliable shipping for all your fitness equipment needs. Here's what you need to know about our shipping process:</p>
+
+            <ul>
+                <li><strong>Processing Time:</strong> Orders are typically processed within 1-2 business days.</li>
+                <li><strong>Shipping Methods:</strong> We offer standard shipping (5-7 business days) and expedited shipping (2-3 business days).</li>
+                <li><strong>Free Shipping:</strong> Orders over $100 qualify for free standard shipping within the continental United States.</li>
+                <li><strong>International Shipping:</strong> We ship to select international destinations. Additional fees and customs duties may apply.</li>
+                <li><strong>Tracking:</strong> A tracking number will be provided via email once your order ships.</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Note:</strong> Large fitness equipment (treadmills, weight racks, etc.) may require special shipping arrangements and longer delivery times. You will be contacted with details after placing your order.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Return Policy</h2>
+            <p>We want you to be completely satisfied with your purchase. If you're not, we offer a straightforward return process:</p>
+
+            <ul>
+                <li><strong>Return Window:</strong> Items may be returned within 30 days of delivery.</li>
+                <li><strong>Condition:</strong> Products must be unused, in original packaging, and in resalable condition.</li>
+                <li><strong>Return Process:</strong> Contact our customer service team to initiate a return and receive a return authorization number.</li>
+                <li><strong>Refunds:</strong> Once we receive and inspect your return, a refund will be issued to your original payment method within 5-7 business days.</li>
+                <li><strong>Return Shipping:</strong> Customers are responsible for return shipping costs unless the item is defective or was shipped in error.</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Exceptions:</strong> Certain items, including personal fitness accessories, nutrition products, and clearance items, may not be eligible for return due to health and safety regulations.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Exchanges</h2>
+            <p>Need a different size or color? We're happy to help with exchanges:</p>
+
+            <ul>
+                <li>Exchanges follow the same 30-day policy as returns.</li>
+                <li>Contact customer service to arrange an exchange.</li>
+                <li>For faster service, you may place a new order for the desired item and return the original purchase for a refund.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Contact Us</h2>
+            <p>If you have any questions about shipping, returns, or exchanges, please don't hesitate to contact our customer service team:</p>
+            <p>Email: support@simgear.com<br>
+            Phone: (555) 123-4567<br>
+            Hours: Monday-Friday, 9am-5pm EST</p>
+        </div>
+    </div>
+
+    <div class="cartTab" id="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <div class="item">
+                <div class="image"></div>
+                <div class="name">Your cart is empty</div>
+                <div class="totalPrice"></div>
+                <div class="quantity">
+                    <span class="minus">-</span>
+                    <span>0</span>
+                    <span class="plus">+</span>
+                </div>
+            </div>
+        </div>
+        <div class="btnCart">
+            <button class="close" id="closeBtn">Close</button>
+            <button class="checkout" onclick="window.location.href='Checkout.html'">Checkout</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h2>SIMGEAR</h2>
+                <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/allProducts.html">Shop All</a></li>
+                    <li><a href="/pages/machines.html">Machines</a></li>
+                    <li><a href="/pages/apparel.html">Apparel</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                    <li><a href="/pages/faqs.html">FAQs</a></li>
+                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 SIMGEAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initializeCart } from '/scripts/script.js';
+        import '/scripts/animations.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCart();
+        });
+    </script>
+</body>
+
+</html>

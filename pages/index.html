@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMGEAR</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/animations.css">
+    <link rel="stylesheet" href="/styles/cart-animations.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css "
+        integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/index.html" style="text-decoration: none; cursor: pointer;">
+                        <h1><span>SIMGEAR</span></h1>
+                    </a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="nav-icons">
+                    <button class="auth-btn" onclick="window.location.href='/pages/login.html'">LogIn</button>
+                         <a href="/pages/profile.html"><i class="fas fa-user"></i></a>
+                    <div class="icon-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span>
+                    </div>
+                </div>
+            </nav>
+            <div class="links">
+                <ul class="nav-links">
+                    <li><a href="/pages/allProducts.html">SHOP ALL</a></li>
+                    <li><a href="/pages/gear.html">FITNESS GEAR</a></li>
+                    <li><a href="/pages/accessories.html">GYM ACCESSORIES </a></li>
+                    <li><a href="/pages/machines.html">MACHINES</a></li>
+                    <li><a href="/pages/apparel.html">APPAREL</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>EVERYTHING SIMGEAR</h1>
+            <button class="shop-btn" onclick="window.location.href='allProducts.html'">SHOP EVERYTHING</button>
+        </div>
+    </section>
+    <section class="explore">
+        <div class="explore-content">
+            <h2>THE SIM GEAR STORE!</h2>
+            <p>YOUR GO-TO DESTINATION FOR TOP-QUALITY FITNESS AND WELLNESS GEAR</p>
+            <button class="shop-btn" onclick="window.location.href='allProducts.html'">START SHOPPING</button>
+        </div>
+    </section>
+    <section class="featured-products">
+        <div class="container">
+            <h2>FEATURED PRODUCTS</h2>
+            <div class="product-grid">
+                <a class="product-link">
+                    <div class="product-card">
+                        <img src="/assets/bike2.JPG" alt="Assault Bike">
+                        <h4>Sim Gear - Fitness Equipment</h4>
+                        <h3>Assault Bike</h3>
+                        <p style="color:#68222A;" class="price">$350 <span class="old-price">$400</span></p>
+                    </div>
+                </a>
+                <a class="product-link">
+                    <div class="product-card">
+                        <img src="/assets/bar3.jpg" alt="Olympic Barbell">
+                        <h4>Sim Gear - Fitness Equipment</h4>
+                        <h3>Olympic Barbell</h3>
+                        <p class="price">$120</p>
+                    </div>
+                </a>
+                <a class="product-link">
+                    <div class="product-card">
+                        <img src="/assets/kettelbell.jpg" alt="Kettelbell">
+                        <h4>Sim Gear - Fitness Equipment</h4>
+                        <h3>Kettelbell</h3>
+                        <p class="price">$75</p>
+                    </div>
+                </a>
+            </div>
+            <button class="view-all-btn" onclick="window.location.href='allProducts.html'">VIEW ALL</button>
+        </div>
+    </section>
+    <section class="popular-categories">
+        <div class="container">
+            <h2>POPULAR CATEGORIES</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="/assets/machines.jpg" alt="Gym Machines">
+                    <button class="category-btn" onclick="window.location.href='machines.html'" >SHOP MACHINES</button>
+                </div>
+                <div class="category-card">
+                    <img src="/assets/equi.jpg" alt="Gym Equipment">
+                    <button class="category-btn" onclick="window.location.href='gear.html'">SHOP EQUIPMENT</button>
+                </div>
+                <div class="category-card">
+                    <img src="/assets/apparel3.jpg" alt="Apparel">
+                    <button class="category-btn" onclick="window.location.href='apparel.html'">SHOP APPAREL</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">X</span>
+            <img id="modalImg" src="" alt="Product Image">
+            <h2 id="modalName"></h2>
+            <p id="modalPrice"></p>
+            <button id="modalAddToCart" class="addCart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="cartTab" id="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <div class="item">
+                <div class="image"></div>
+                <div class="name">Your cart is empty</div>
+                <div class="totalPrice"></div>
+                <div class="quantity">
+                    <span class="minus">-</span>
+                    <span>0</span>
+                    <span class="plus">+</span>
+                </div>
+            </div>
+        </div>
+        <div class="btnCart">
+            <button class="close" id="closeBtn">Close</button>
+            <button class="checkout" onclick="window.location.href='Checkout.html'">Checkout</button>
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h2>SIMGEAR</h2>
+                <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/pages/allProducts.html">Shop All</a></li>
+                    <li><a href="/pages/machines.html">Machines</a></li>
+                    <li><a href="/pages/apparel.html">Apparel</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                    <li><a href="/pages/faqs.html">FAQs</a></li>
+                    <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/pages/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 SIMGEAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script type="module">
+    import { initializeCart, initializeFeaturedProducts } from '/scripts/script.js';
+    import '/scripts/animations.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeCart();
+        initializeFeaturedProducts();
+    });
+</script>
+</body>
+
+</html>

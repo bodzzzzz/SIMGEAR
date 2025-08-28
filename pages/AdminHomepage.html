@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdminHomepage - SIMGEAR</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/AdminHomepage.css">
+  <link rel="stylesheet" href="/styles/admin-responsive.css">
+  <script defer src="/scripts/Add-Update_Products.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/pages/AdminHomepage.html" style="text-decoration: none; cursor: pointer;">
+                        <h1><span>SIMGEAR</span></h1>
+                    </a>
+                </div>
+                <div class="nav-icons search-group">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="logout-container">
+
+                    <button type="button" class="logout"  onclick="Open()">logout</button>
+                    <div class = 'popup' id="popup" >
+                        <h4>Are you sure you want to log out?</h4>
+                        <div class="popup-buttons">
+                            <button class="confirm-btn" onclick="window.location.href='login.html'">Confirm</button>
+                            <button class="cancel-btn" onclick="Close()">Cancel</button>
+                        </div>
+                    </div>
+                    <div id="overlay" class="overlay"></div>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+
+<hr>
+
+
+<section class="order-section">
+    <div class="admin-dashboard">
+
+                <div class="fnContainer">
+                    <div class="tab">
+                        <ul class="fnTabList">
+                            <li><button class="fnButton" onclick="window.location.href='Add-Update_Products.html'">Add Product</button></li>
+                            <li><button class="fnButton" onclick="window.location.href='OrderManagement.html'">Order Management</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            <div class="table-container">
+                <h2>Products List</h2>
+                <table class="order-table">
+                    <thead>
+                    <tr>
+                        <th>Product Image</th>
+                        <th>Name</th>
+                        <th>Unit price</th>
+                        <th>Stock Left</th>
+                        <th>Units Sold</th>
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><img src="/assets/beanie.jpg" alt="Item 1" class="order-image"></td>
+                        <td>Beanie with logo</td>
+                        <td>$18.00</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td><button class="listBtn">Update Product</button></td>
+                        <td><i class="fa-solid fa-trash" style="width: 50%; height: 50%; cursor: pointer;"></i></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/shirt.webp" alt="Item 2" class="order-image"></td>
+                        <td>Classy shirt</td>
+                        <td>$42</td>
+                        <td>14</td>
+                        <td>50</td>
+                        <td><button class="listBtn">Update Product</button></td>
+                        <td><i class="fa-solid fa-trash" style="width: 50%; height: 50%; cursor: pointer;"></i></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class='popup' id="removePopup">
+                <h4>Are you sure you want to remove this product?</h4>
+                <div class="popup-buttons">
+                    <button class="confirm-btn" id="confirmRemove">Confirm</button>
+                    <button class="cancel-btn" onclick="CloseRemove()">Cancel</button>
+                </div>
+            </div>
+            <div id="overlay" class="overlay"></div>
+  </div>
+</section>
+
+
+
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-about">
+            <h2>SIMGEAR</h2>
+            <p>Your destination for high-performance fitness gear and lifestyle apparel.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="/pages/allProducts.html">Shop All</a></li>
+                <li><a href="/pages/machines.html">Machines</a></li>
+                <li><a href="/pages/apparel.html">Apparel</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-support">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="/pages/shipping.html">Shipping & Returns</a></li>
+                <li><a href="/pages/faqs.html">FAQs</a></li>
+                <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                <li><a href="/pages/terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 SIMGEAR. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
