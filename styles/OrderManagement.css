@@ -208,7 +208,7 @@ header {
 .footer-about p {
     max-width: 300px;
     line-height: 1.6;
-    color: rgb(38, 34 36);
+    color: rgb(38, 34, 36);
 
 }
 
@@ -265,7 +265,7 @@ header {
     padding-top: 30px;
     border-top: 1px solid #444;
     margin-top: 30px;
-    color: #777;
+    color:#777;
 }
 .popup{
     position: fixed;
